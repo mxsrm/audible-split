@@ -59,8 +59,7 @@ fn main() -> Result<()> {
 
     let bytes = fs::read(&args.json).with_context(|| format!("Reading {}", args.json.display()))?;
 
-    let mut data: serde_json::Value =
-        serde_json::from_slice(&bytes).context("Parsing chapter JSON")?;
+    let mut data: serde_json::Value = serde_json::from_slice(&bytes).context("Parsing chapter JSON")?;
 
     // Accept three layouts:
     //   {"chapters": {"chapters": [...]}}
@@ -75,8 +74,7 @@ fn main() -> Result<()> {
         data
     };
 
-    let chapters: Vec<Chapter> =
-        serde_json::from_value(chapter_data).context("Invalid chapter data")?;
+    let chapters: Vec<Chapter> = serde_json::from_value(chapter_data).context("Invalid chapter data")?;
 
     // Validate before launching any FFmpeg processes.
     ensure!(!chapters.is_empty(), "No chapters found");
