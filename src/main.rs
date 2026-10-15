@@ -1,8 +1,9 @@
+use std::{fs, path::PathBuf, process::Command};
+
 use anyhow::{Context, Result, ensure};
 use clap::Parser;
 use rayon::prelude::*;
 use serde::Deserialize;
-use std::{fs, path::PathBuf, process::Command};
 
 #[derive(Parser)]
 #[command(version, about = "Split Audible audiobooks into chapters")]
