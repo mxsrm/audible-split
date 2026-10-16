@@ -10,7 +10,7 @@ clean:
     git clean -dfx
 
 build:
-    cargo build --profile release
+    cargo build --profile release-lto
 
 release:
     cargo smart-release --no-push --no-changelog-preview --allow-dirty --no-publish --execute
