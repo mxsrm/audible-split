@@ -46,7 +46,7 @@ indent_style = "Block"
 
 # Imports Configuration
 group_imports = "StdExternalCrate"
-imports_granularity = "Crate"
+imports_granularity = "Module"
 imports_layout = "HorizontalVertical"
 reorder_imports = true
 
